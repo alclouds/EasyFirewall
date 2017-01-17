@@ -31,7 +31,7 @@ iptables -A TCP -p tcp --dport 2222 -j ACCEPT
 iptables -A ICMP -p icmp --icmp-type 8 -j ACCEPT
 
 # enable UDP traceroute rejections to get sent out
--A UDP -p udp --dport 33434:33523 -j REJECT
+iptables -A UDP -p udp --dport 33434:33523 -j REJECT
 
 #Create General Purpose Accept and Deny Rules
 iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
